@@ -7,11 +7,14 @@
 #include <days/1/part_2.h>
 #include <days/2/part_1.h>
 #include <days/2/part_2.h>
+#include <days/3/part_1.h>
+#include <days/3/part_2.h>
 
-const struct day DAYS[] = { { .day = "1", .part = "1", .f = &days_1_part_1 },
-                            { .day = "1", .part = "2", .f = &days_1_part_2 },
-                            { .day = "2", .part = "1", .f = &days_2_part_1 },
-                            { .day = "2", .part = "2", .f = &days_2_part_2 } };
+const struct day DAYS[] = {
+    { .day = "1", .part = "1", .f = &days_1_part_1 }, { .day = "1", .part = "2", .f = &days_1_part_2 },
+    { .day = "2", .part = "1", .f = &days_2_part_1 }, { .day = "2", .part = "2", .f = &days_2_part_2 },
+    { .day = "3", .part = "1", .f = &days_3_part_1 }, { .day = "3", .part = "2", .f = &days_3_part_2 }
+};
 
 const struct day* days_get(char* day, char* part) {
     for (size_t i = 0; i < DAYS_LEN; i++) {
