@@ -20,5 +20,6 @@ typedef struct list {
 list_t list_create();
 void list_destroy(list_t list);
 void list_append(list_t list, void* elem, bool owned);
+void list_remove(list_elem_t* elem);
 
 #endif

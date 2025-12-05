@@ -25,6 +25,7 @@ void list_append(list_t list, void* elem, bool owned) {
     struct list_elem* l_elem = (struct list_elem*) safe_malloc(sizeof(struct list_elem));
     l_elem->elem = elem;
     l_elem->owned = owned;
+    l_elem->next = NULL;
 
     list->length++;
 
@@ -38,4 +39,10 @@ void list_append(list_t list, void* elem, bool owned) {
         l_elem->prev = NULL;
         l_elem->next = NULL;
     }
+}
+
+void list_remove(list_elem_t* elem) {
+    if (elem->owned)
+        free(elem->elem);
+    elem->elem = NULL;
 }
